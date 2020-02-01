@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#navBar {
+    background-color: rgb(56, 252, 170);
+    font-size: 1.3em;
+    height: 44px;
+}
+
+#navBarInner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navBarItem {
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+
+#appTitle {
+    cursor: default;
+}
+
+#searchBarWrapper img {
+    cursor: pointer;
+}
+
+#searchBar {
+    border: none;
+    width: 200px;
+    height: 28px;
+    padding: 3px;
+    margin-left: 3px;
+    border-radius: 3px;
+    outline: 0;
+    color: rgb(0, 0, 0);
+    background: rgb(120, 240, 190);
+}
+
+#searchBar:focus {
+    background: rgb(167, 245, 213);
+}
+
+#createNewList {
+    cursor: pointer;
+}
