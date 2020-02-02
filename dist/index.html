@@ -20,25 +20,126 @@
                 <input id="searchBar" type="text" placeholder="Quick Find" autocomplete="off" autocorrect="off" spellcheck="false">
             </div>
 
-            <div class="navBarItem" id="createNewList">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-width="32" height="32"
-viewBox="0 0 172 172"
-style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#000000"><path d="M86,6.88c-43.65603,0 -79.12,35.46397 -79.12,79.12c0,43.65603 35.46397,79.12 79.12,79.12c43.65603,0 79.12,-35.46397 79.12,-79.12c0,-43.65603 -35.46397,-79.12 -79.12,-79.12zM86,13.76c39.93779,0 72.24,32.30221 72.24,72.24c0,39.93779 -32.30221,72.24 -72.24,72.24c-39.93779,0 -72.24,-32.30221 -72.24,-72.24c0,-39.93779 32.30221,-72.24 72.24,-72.24zM82.56,44.72v37.84h-37.84v6.88h37.84v37.84h6.88v-37.84h37.84v-6.88h-37.84v-37.84z"></path></g></g></svg>
+            <div class="navBarItem" id="navBarButtons">
+                <div class="navBarButton">
+                    <img src="https://img.icons8.com/ios/32/000000/plus.png">
+                </div>
+                <div class="navBarButton">
+                    <img src="https://img.icons8.com/ios/32/000000/settings-3.png">
+                </div>            
             </div>
         </div>
     </div>
 
     <div id="main">
         <div id="projectList">
-
+            <div id="projects">
+                <div id="projectExpand">
+                    <img src="https://img.icons8.com/metro/24/000000/chevron-right.png">
+                    <h4 id="projectsTitleText">Projects</h4>
+                </div>
+                <img src="https://img.icons8.com/android/24/000000/plus.png" id="projectAdd">
+            </div>
         </div>
 
         <div id="todoList">
+            <div id="projectDetails">
+                <div id="title">
+                    <h4>PROJECT #1</h4>
+                </div>
+                <div id="description">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas fugit obcaecati, ipsa, dolorum maxime exercitationem consequuntur libero possimus iure, nemo. 
+                </div>
+                <div id="options">
+                    <button>
+                        <img src="https://img.icons8.com/android/20/000000/plus.png">
+                    </button>
+                    <button>
+                        <img src="https://img.icons8.com/material-outlined/20/000000/delete-sign.png">
+                    </button>
+                    <button>
+                        <img src="https://img.icons8.com/metro/20/000000/more.png">
+                    </button>
+                </div>
+            </div>
 
+            <div class="linebreak"></div>
+
+            <div id="projectWrapper">
+                <div class="task">
+                    <div class="checkbox">
+                        <div class="customCheckbox"></div>
+                    </div>
+
+                    <div class="title">
+                        <h5>This is an example task title for the todo list</h5>
+                    </div>
+
+                    <div class="dropdown">
+                        <input type="checkbox">
+                        <span class="checkmark">
+                            <img src="https://img.icons8.com/metro/24/000000/chevron-right.png">
+                        </span>
+                    </div>
+
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni facilis iste fugiat quae nostrum. 
+                    </div>
+
+                    <div class="dueDate">
+                        2020-2-20
+                    </div>
+
+                    <div class="priority">
+                        High
+                    </div>
+
+                    <div class="taskLinebreak">
+
+                    </div>
+                </div>
+
+                <div class="task">
+                    <div class="checkbox">
+                        <div class="customCheckbox"></div>
+                    </div>
+
+                    <div class="title">
+                        <h5>This is an example task title for the todo list</h5>
+                    </div>
+
+                    <div class="dropdown">
+                        <input type="checkbox">
+                        <span class="checkmark">
+                            <img src="https://img.icons8.com/metro/24/000000/chevron-right.png">
+                        </span>
+                    </div>
+
+                    <div class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni facilis iste fugiat quae nostrum. 
+                    </div>
+
+                    <div class="dueDate">
+                        2020-2-20
+                    </div>
+
+                    <div class="priority">
+                        High
+                    </div>
+
+                    <div class="taskLinebreak">
+
+                    </div>
+                </div>
+
+                <div id="addNewTask">
+                    <div id="addTaskIcon"></div>
+                    <div id="addTaskText">Add Task</div>
+                </div>
+            </div>
         </div>
     </div>
-    
+
     <!-- <script src="main.js"></script> -->
 </body>
 </html>
