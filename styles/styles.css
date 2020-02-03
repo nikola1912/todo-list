@@ -16,6 +16,7 @@ body {
     font-size: 1.3em;
     height: 44px;
     width: 100vw;
+    min-width: 922px;
     box-shadow: 0px -1px 12px 0px rgba(0,0,0,0.75);
     position: relative;
     z-index: 1;
@@ -107,17 +108,39 @@ body {
     align-items: center;
 }
 
+.projectDropdown {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.projectDropdown input {
+    width: 440px;
+    height: 29.6px;
+}
+
+.projectCheckmark {
+    display: flex;
+    align-items: center;
+}
+
 #projectsTitleText {
     margin: 0 0 0 7px;
 }
 
-#projectAdd {
-    cursor: pointer;
-    border-radius: 40%;
+#projectAddWrapper {
+    padding: 3px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
 }
 
-#projectAdd:hover {
+#projectAddWrapper:hover {
     background-color: var(--theme-color-hover);
+}
+
+#projectAdd {
+    cursor: pointer;
 }
 
 .linebreak {
@@ -144,10 +167,6 @@ body {
 
 #title {
     font-size: 1.2em;
-}
-
-#description {
-    
 }
 
 #options {
@@ -243,8 +262,15 @@ body {
     font-size: 1em;
 }
 
-.description {
+.ON {
+    display: block;
+}
+
+.OFF {
     display: none;
+}
+
+.description {
     margin: 13px 0;
     grid-column: 2 / 3;
 }
