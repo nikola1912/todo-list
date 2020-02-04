@@ -298,7 +298,7 @@ body {
 }
 
 .checkmark img {
-    transition: 300ms ease all;
+    transition: 240ms ease all;
 }
 
 .dueDate {
