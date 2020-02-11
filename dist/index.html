@@ -24,7 +24,7 @@
                     <div>
                         <label for="description"><b>Description</b></label>
                     </div>
-                    <textarea placeholder="Task description"></textarea>
+                    <textarea name="description" placeholder="Task description"></textarea>
                 </div>
 
                 <div>
@@ -38,7 +38,7 @@
                     <div>
                         <label for="priority"><b>Priority</b></label>
                     </div>
-                    <select>
+                    <select name="priority">
                         <option value="None">None</option>
                         <option value="Low">Low</option>
                         <option value="Medium">Medium</option>
@@ -49,6 +49,29 @@
                 
                 <button id="cancelButton" class="buttons" type="button">Cancel</button>
                 <button id="submitButton" class="buttons" type="button">Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <form id="projectForm">
+        <div id="projectForm-content">
+            <div id="container">
+                <div>
+                    <div>
+                        <label for="title"><b>Title</b></label>
+                    </div>
+                    <input type="text" placeholder="Project title" name="title" required>
+                </div>
+
+                <div>
+                    <div>
+                        <label for="description"><b>Description</b></label>
+                    </div>
+                    <textarea name="description" placeholder="Project description"></textarea>
+                </div>
+           
+                <button id="projectFormCancelButton" class="buttons" type="button">Cancel</button>
+                <button id="projectFormSubmitButton" class="buttons" type="button">Submit</button>
             </div>
         </div>
     </form>
@@ -76,12 +99,11 @@
     </div>
 
     <div id="main">
-        <div id="projectList">
+        <div id="projectListWrapper">
             <div id="projects">
                 <div id="projectExpand">
-                    <!-- <img src="https://img.icons8.com/metro/24/000000/chevron-right.png"> -->
                     <div class="dropdown projectDropdown">
-                        <input type="checkbox">
+                        <input id="expandProjectCheckbox" type="checkbox" checked>
                         <span class="checkmark projectCheckmark">
                             <img src="https://img.icons8.com/metro/24/000000/chevron-right.png">
                         </span>
@@ -90,6 +112,21 @@
                 </div>
                 <div id="projectAddWrapper">
                     <img src="https://img.icons8.com/android/24/000000/plus.png" id="projectAdd">
+                </div>
+            </div>
+            <div class="projectHeaderLinebreak"></div>
+            <div id="projectList" class="showProjects">
+                <div class="project">
+                    <div class="projectColor red"></div>
+                    Project #1
+                </div>
+                <div class="project">
+                    <div class="projectColor blue"></div>
+                    Project #2
+                </div>
+                <div class="project">
+                    <div class="projectColor yellow"></div>
+                    Project #3
                 </div>
             </div>
         </div>
@@ -118,69 +155,103 @@
             <div class="linebreak"></div>
 
             <div id="projectWrapper">
-                <div class="task">
+
+                <div class="task" id="taskTemplate">
                     <div class="checkbox">
                         <div class="customCheckbox"></div>
                     </div>
-
-                    <div class="title">
-                        <h5>This is an example task title for the todo list</h5>
-                    </div>
-
+                    <div class="title"></div>
                     <div class="dropdown">
-                        <input type="checkbox">
-                        <span class="checkmark">
-                            <img src="https://img.icons8.com/metro/24/000000/chevron-right.png">
-                        </span>
+                        <div class="dropdownButton">
+                            <input type="checkbox" class="expandTaskCheckbox" checked>
+                            <span class="checkmark">
+                                <img src="https://img.icons8.com/metro/24/000000/chevron-right.png">
+                            </span>
+                        </div>
+                        <div class="dropdownButton taskOptions">
+                            <img src="https://img.icons8.com/metro/22/000000/more.png">
+                        </div>
                     </div>
-
-                    <div class="description ON">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni facilis iste fugiat quae nostrum. 
-                    </div>
-
-                    <div class="dueDate">
-                        2020-2-20
-                    </div>
-
-                    <div class="priority">
-                        High
-                    </div>
-
-                    <div class="taskLinebreak">
-
-                    </div>
+                    <div class="description OFF"></div>
+                    <div class="dueDate"></div>
+                    <div class="priority"></div>
+                    <div class="taskLinebreak"></div>
                 </div>
 
-                <div class="task">
-                    <div class="checkbox">
-                        <div class="customCheckbox"></div>
+                <div id="tasksList"> 
+
+                    <div class="task">
+                        <div class="checkbox">
+                            <div class="customCheckbox"></div>
+                        </div>
+
+                        <div class="title">
+                            <h5>This is an example task title for the todo list</h5>
+                        </div>
+
+                        <div class="dropdown">
+                            <div class="dropdownButton">
+                                <input type="checkbox" class="expandTaskCheckbox" checked>
+                                <span class="checkmark">
+                                    <img src="https://img.icons8.com/metro/24/000000/chevron-right.png">
+                                </span>
+                            </div>
+                            <div class="dropdownButton taskOptions">
+                                <img src="https://img.icons8.com/metro/22/000000/more.png">
+                            </div>
+                        </div>
+
+                        <div class="description ON">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni facilis iste fugiat quae nostrum. 
+                        </div>
+
+                        <div class="dueDate">
+                            2020-2-20
+                        </div>
+
+                        <div class="priority">
+                            High
+                        </div>
+
+                        <div class="taskLinebreak"></div>
                     </div>
 
-                    <div class="title">
-                        <h5>This is an example task title for the todo list</h5>
-                    </div>
+                    <div class="task">
+                        <div class="checkbox">
+                            <div class="customCheckbox"></div>
+                        </div>
 
-                    <div class="dropdown">
-                        <input type="checkbox">
-                        <span class="checkmark">
-                            <img src="https://img.icons8.com/metro/24/000000/chevron-right.png">
-                        </span>
-                    </div>
+                        <div class="title">
+                            <h5>This is an example task title for the todo list</h5>
+                        </div>
 
-                    <div class="description OFF">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni facilis iste fugiat quae nostrum. 
-                    </div>
+                        <div class="dropdown">
+                            <div class="dropdownButton">
+                                <input type="checkbox" class="expandTaskCheckbox">
+                                <span class="checkmark">
+                                    <img src="https://img.icons8.com/metro/24/000000/chevron-right.png">
+                                </span>
+                            </div>
+                            <div class="dropdownButton taskOptions">
+                                <img src="https://img.icons8.com/metro/22/000000/more.png">
+                            </div>
+                        </div>
 
-                    <div class="dueDate">
-                        2020-2-20
-                    </div>
+                        <div class="description OFF">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni facilis iste fugiat quae nostrum. 
+                        </div>
 
-                    <div class="priority">
-                        High
-                    </div>
+                        <div class="dueDate">
+                            2020-2-20
+                        </div>
 
-                    <div class="taskLinebreak">
+                        <div class="priority">
+                            High
+                        </div>
 
+                        <div class="taskLinebreak">
+
+                        </div>
                     </div>
                 </div>
 

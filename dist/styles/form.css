@@ -23,7 +23,7 @@
 }
 
 #form {
-    display: block;
+    display: none;
     position: fixed;
     text-align: center;
     z-index: 2;
@@ -56,8 +56,46 @@
 
 #form textarea {
     max-width: 60%;
+    min-width: 60%;
 }
 
 #form select {
     width: 65%;
+}
+
+#projectForm {
+    display: none;
+    position: fixed;
+    text-align: center;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.051);
+    padding-top: 60px;
+}
+
+#projectForm-content {
+    background-color: #fefefe;
+    margin: 50px auto 0 auto;
+    padding: 15px;
+    padding-top: 24px;
+    z-index: 3;
+    border-radius: 4%;
+    width: 462px;
+}
+
+#projectForm input, #projectForm textarea {
+    font-family: inherit;
+    width: 60%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+}
+
+#projectForm textarea {
+    max-width: 60%;
+    min-width: 60%;
 }

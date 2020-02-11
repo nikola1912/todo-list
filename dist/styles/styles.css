@@ -1,6 +1,7 @@
 :root {
     --theme-color: rgb(56, 252, 170);
     --theme-color-hover: rgb(106, 255, 193);
+    --theme-color-active: rgb(181, 255, 224);
     --theme-color-focus: rgba(255, 255, 255, 0.493);
     --searchBar-color: rgb(106, 255, 193);
 }
@@ -89,7 +90,7 @@ body {
     z-index: -1;
 }
 
-#projectList {
+#projectListWrapper {
     min-width: 266px;
     padding: 28px 13px;
     border-right: 1px solid rgb(240, 240, 240);
@@ -111,11 +112,10 @@ body {
 .projectDropdown {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
 }
 
 .projectDropdown input {
-    width: 440px;
+    width: 235px;
     height: 29.6px;
 }
 
@@ -131,6 +131,7 @@ body {
 #projectAddWrapper {
     padding: 3px;
     border-radius: 50%;
+    cursor: pointer;
     display: flex;
     align-items: center;
 }
@@ -139,13 +140,10 @@ body {
     background-color: var(--theme-color-hover);
 }
 
-#projectAdd {
-    cursor: pointer;
-}
-
 .linebreak {
     border: 0.5px solid rgb(214, 214, 214);
-    margin: 25px 0;
+    margin-top: 28px;
+    margin-bottom: 18px;
 }
 
 #todoList {
@@ -162,7 +160,8 @@ body {
 
 #projectDetails {
     display: grid;
-    grid-template: 1fr 2fr / 14fr 1fr
+    align-items: center;
+    grid-template: auto 90% / 14fr 1fr;
 }
 
 #title {
@@ -186,6 +185,7 @@ body {
     border-radius: 4px;
     padding: 4px;
     width: 31.5px;
+    height: 31.5px;
     outline: 0;
     cursor: pointer;
     background-color: var(--theme-color);
@@ -230,7 +230,7 @@ body {
 }
 
 .task {
-    margin-bottom: 19px;
+    margin-bottom: 5px;
     display: grid;
     grid-template: auto / 1fr 12fr 3fr;
     align-items: center;
@@ -263,22 +263,32 @@ body {
 }
 
 .ON {
-    display: block;
+    opacity: 1;
+    height: auto;
+    margin: 13px 0;
 }
 
 .OFF {
-    display: none;
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
 }
 
 .description {
-    margin: 13px 0;
     grid-column: 2 / 3;
+    transition: opacity 1s ease-out;
+}
+
+.dropdownButton {
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .dropdown {
     justify-self: center;
-    display: flex;
-    justify-content: center;
 }
 
 .dropdown input {
@@ -293,8 +303,37 @@ body {
     transform: rotate(90deg);
 }
 
-.ckeckmark {
+.dropdown input:hover ~ .checkmark {
+    background-color: var(--theme-color-hover);
+}
+
+.dropdown input:active ~ .checkmark {
+    background-color: var(--theme-color-active);
+}
+
+.checkmark {
+    padding: 2px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
     z-index: 0;
+}
+
+.taskOptions {
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+}
+
+.taskOptions:hover {
+    background-color: var(--theme-color-hover);
+}
+
+.taskOptions:active {
+    background-color: var(--theme-color-active);
 }
 
 .checkmark img {
@@ -310,4 +349,63 @@ body {
     color: red;
     grid-column: 3;
     justify-self: center;
+}
+
+#taskTemplate {
+    display: none;
+}
+
+.projectHeaderLinebreak {
+    border: 0.5px solid rgb(214, 214, 214);
+    margin-top: 10px;
+}
+
+.projectLinebreak {
+    border: 0.5px solid rgb(214, 214, 214);  
+}
+
+.showProjects {
+    height: auto;
+    display: block;
+    flex-direction: column;
+}
+
+.hideProjects {
+    height: 0;
+    display: none;
+}
+
+.project {
+    cursor: pointer;
+    padding: 8px 0px;
+    border-top: 0.5px solid rgb(214, 214, 214);  
+    display: flex;
+    align-items: center;
+}
+
+.project:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.selected {
+    background-color: rgb(240, 240, 240);
+}
+
+.projectColor {
+    width: 10px;
+    height: 10px;
+    margin: 0 13px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: rgb(255, 60, 60);
+}
+
+.blue {
+    background-color: rgb(113, 113, 255);
+}
+
+.yellow {
+    background-color: rgb(255, 230, 8);
 }

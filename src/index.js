@@ -1,30 +1,10 @@
-import eventListeners from "./eventListeners.js";
+import taskController from "./taskController.js";
+import projectController from "./projectController.js";
 
-const todoListFactory = (title) => {
+import displayController from "./displayController.js";
+import testObjects from "./testObjects.js";
 
-    let description = "";
+projectController.renderProjects(testObjects.exampleProjects);
 
-    const getTitle = () => title;
-
-    const getDescription = () => description;
-
-    const setDescription = () => {
-        let newDescription = prompt("Enter description");
-        description = newDescription;
-    };
-
-    return {
-        getTitle,
-        setDescription,
-        getDescription
-    }
-};
-
-/* const newList = todoListFactory("list #1");
-
-console.log(newList.getDescription());
-newList.setDescription();
-console.log(newList.getDescription());
-console.log(newList.getTitle()); */
-
-eventListeners.applyEventListeners();
+taskController.applyEventListeners();
+projectController.applyEventListeners();
