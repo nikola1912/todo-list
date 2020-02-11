@@ -1,19 +1,14 @@
 import displayController from "./displayController";
 import taskFactory from "./taskFactory.js";
-import projectFactory from "./projectFactory";
 
 const eventListenersModule = (() => {
 
-    const projects = [];
-
     let selectedProjectTasks;
 
-    const _projectList       = document.getElementById("projectList").childNodes;
     const _addTaskButton     = document.getElementById("addNewTask");
     const _submitButton      = document.getElementById("submitButton");
     const _cancelButton      = document.getElementById("cancelButton");
     const _form              = document.getElementById("form");
-    const _expandTaskButtons = document.getElementsByClassName("expandTaskCheckbox");
 
     const _submitNewTaskForm = () => {
         const newTaskTitle       = _form.elements["title"].value;
