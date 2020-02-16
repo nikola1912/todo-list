@@ -1,6 +1,6 @@
 import projectFactory from "./projectFactory.js";
 import taskController from "./taskController.js";
-import displayController from "./displayController";
+import displayController from "./displayController.js";
 
 import testObjects from "./testObjects.js";
 

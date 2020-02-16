@@ -1,4 +1,4 @@
-import displayController from "./displayController";
+import displayController from "./displayController.js";
 import taskFactory from "./taskFactory.js";
 
 const eventListenersModule = (() => {

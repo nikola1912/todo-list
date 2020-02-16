@@ -1,5 +1,5 @@
 import projectFactory from "./projectFactory.js";
-import taskFactory from "./taskFactory";
+import taskFactory from "./taskFactory.js";
 
 const testObjects = (() => {
 
