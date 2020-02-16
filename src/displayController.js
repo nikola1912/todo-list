@@ -35,7 +35,7 @@ const displayControllerModule = (() => {
             projectParent.dataset.id = project.getID();
 
             const projectColor = document.createElement("div");
-            projectColor.classList.add("projectColor", "red")
+            projectColor.classList.add("projectColor", "red");
             projectParent.append(projectColor, `${project.getTitle()}`);
 
             _projectList.append(projectParent);
@@ -81,7 +81,7 @@ const displayControllerModule = (() => {
         taskList.forEach((task) => {
             const newTask = taskTemplate.cloneNode(true);
             newTask.style.display = "grid";
-            tasksList.append(newTask);
+            tasksListDiv.append(newTask);
             newTask.getElementsByClassName("title")[0].innerHTML = `<h4>${task.getTitle()}</h4>`;
             newTask.getElementsByClassName("description")[0].textContent = task.getDescription();
             newTask.getElementsByClassName("dueDate")[0].textContent = task.getDueDate();
