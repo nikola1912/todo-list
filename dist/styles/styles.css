@@ -6,18 +6,22 @@
     --searchBar-color: rgb(106, 255, 193);
 }
 
+html {
+    overflow-y: scroll;
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     background-color: rgb(250, 250, 250);
+    max-width: 100vw;
 }
 
 #navBar {
     background-color: var(--theme-color);
     font-size: 1.3em;
     height: 44px;
-    width: 100vw;
-    min-width: 922px;
+    width: 100%;
     box-shadow: 0px -1px 12px 0px rgba(0,0,0,0.75);
     position: relative;
     z-index: 1;
@@ -85,14 +89,14 @@ body {
 #main {
     margin: 0 auto;
     width: 922px;
-    height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
     display: flex;
     z-index: -1;
 }
 
 #projectListWrapper {
     min-width: 266px;
-    padding: 28px 13px;
+    padding: 28px 17px;
     border-right: 1px solid rgb(240, 240, 240);
 }
 
@@ -141,9 +145,8 @@ body {
 }
 
 .linebreak {
-    border: 0.5px solid rgb(214, 214, 214);
-    margin-top: 28px;
-    margin-bottom: 18px;
+    border: 1px solid rgb(214, 214, 214);
+    margin: 18px 0;
 }
 
 #todoList {
@@ -161,7 +164,11 @@ body {
 #projectDetails {
     display: grid;
     align-items: center;
-    grid-template: auto 90% / 14fr 1fr;
+    grid-template: auto 80% / 14fr 1fr;
+}
+
+#description {
+    margin-top: 8px;
 }
 
 #title {
@@ -265,7 +272,8 @@ body {
 .ON {
     opacity: 1;
     height: auto;
-    margin: 13px 0;
+    margin-top: 2px;
+    margin-bottom: 9px;
 }
 
 .OFF {
