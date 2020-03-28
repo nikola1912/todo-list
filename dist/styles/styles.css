@@ -46,6 +46,7 @@ body {
 #searchButton {
     height: 44px;
     width: 44px;
+    border-radius: 100%;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -96,6 +97,7 @@ body {
     cursor: pointer;
     height: 44px;
     width: 44px;
+    border-radius: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
