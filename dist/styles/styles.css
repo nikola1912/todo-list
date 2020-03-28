@@ -1,6 +1,6 @@
 :root {
     --theme-color: rgb(56, 252, 170);
-    --theme-color-hover: rgb(106, 255, 193);
+    --theme-color-hover: rgb(131, 253, 202);
     --theme-color-active: rgb(181, 255, 224);
     --theme-color-focus: rgba(255, 255, 255, 0.493);
     --searchBar-color: rgb(106, 255, 193);
@@ -44,8 +44,8 @@ body {
 }
 
 #searchButton {
-    height: 40px;
-    width: 40px;
+    height: 44px;
+    width: 44px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -84,8 +84,8 @@ body {
 
 .navBarButton {
     cursor: pointer;
-    height: 40px;
-    width: 48px;
+    height: 44px;
+    width: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
