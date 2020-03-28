@@ -76,13 +76,23 @@ body {
     background-color: var(--theme-color-focus);
 }
 
-#navBarButtons {
-    width: 84px;
-    display: flex;
-    justify-content: space-between;
+#settingsMenuWrapper {
+    display: block;
+    float: left;
 }
 
-.navBarButton {
+#settingsMenu {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    z-index: 1;
+    background-color: white;
+    font-size: 0.74em;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+}
+
+#settingsButton span {
     cursor: pointer;
     height: 44px;
     width: 44px;
@@ -91,8 +101,65 @@ body {
     justify-content: center;
 }
 
-.navBarButton:hover {
+#settingsCheckbox:hover + span {
     background-color: var(--theme-color-hover);
+}
+
+#settingsCheckbox {
+    cursor: pointer;
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    height: 44px;
+    width: 44px;
+}
+
+#settingsCheckbox:checked ~ #settingsMenu {
+    display: block;
+}
+
+.settingsOption:first-child {
+    padding-top: 8px;
+}
+
+.settingsOption:last-child {
+    padding-bottom: 10px;
+}
+
+.settingsOption {
+    border: none;
+    width: 100%;
+    background-color: white;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    outline: 0;
+    font: inherit;
+    font-size: 0.9em;
+}
+
+.settingsOption:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.settingsOption:disabled:hover {
+    background-color: white;
+}
+
+.settingsOption:hover {
+    background-color: var(--theme-color-hover);
+}
+
+.settingsIcon {
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+}
+
+.settingsText {
+    margin-left: 6px;
 }
 
 #main {
