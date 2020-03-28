@@ -85,9 +85,22 @@ const displayControllerModule = (() => {
             newTask.getElementsByClassName("title")[0].innerHTML = `<h4>${task.getTitle()}</h4>`;
             newTask.getElementsByClassName("description")[0].textContent = task.getDescription();
             newTask.getElementsByClassName("dueDate")[0].textContent = task.getDueDate();
-            newTask.getElementsByClassName("priority")[0].textContent = task.getPriority();
+            newTask.getElementsByClassName("priority")[0].textContent = task.getPriority() === "None" ? "" : task.getPriority();
             newTask.getElementsByClassName("expandTaskCheckbox")[0].addEventListener("click", expandTask);
             newTask.removeAttribute("id");
+
+            const newTaskPriority = newTask.getElementsByClassName("priority")[0];
+            switch(task.getPriority()) {
+                case "High":
+                    newTaskPriority.style.color = "red";
+                    break;
+                case "Medium":
+                    newTaskPriority.style.color = "orange";
+                    break;
+                case "Low":
+                    newTaskPriority.style.color = "green";
+                    break;
+            }
         });
     };
 

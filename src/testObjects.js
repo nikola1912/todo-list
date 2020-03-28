@@ -5,6 +5,7 @@ const testObjects = (() => {
 
     let exampleProjects = [];
     let projectID = 0;
+    let priorityTrigger = false;
 
     const createExampleProject = (title, taskCount) => {
         const newProject = projectFactory(title, projectID);
@@ -14,7 +15,10 @@ const testObjects = (() => {
             const newTask = taskFactory(taskTitle, i);
             const taskDescription = "Students compile a collection of their texts in a variety of genres over time and choose two pieces to present for summative assessment. In the majority of cases, the work in the student’s collection will arise from normal classwork, as the examples below illustrate.";
             const taskDueDate = "2020-02-11";
-            const taskPriority = "High";
+            const taskPriority = i % 2 === 0 ?
+            priorityTrigger ? "Low" : "High" :
+            priorityTrigger ? "Medium" : "None";
+            if (i % 2 === 0) priorityTrigger = !priorityTrigger;
 
             newTask.setDescription(taskDescription);
             newTask.setDueDate(taskDueDate);
