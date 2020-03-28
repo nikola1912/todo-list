@@ -64,7 +64,7 @@
 }
 
 #projectForm {
-    display: block;
+    display: none;
     position: fixed;
     text-align: center;
     z-index: 2;

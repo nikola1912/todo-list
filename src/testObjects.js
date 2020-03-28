@@ -7,8 +7,8 @@ const testObjects = (() => {
     let projectID = 0;
     let priorityTrigger = false;
 
-    const createExampleProject = (title, taskCount) => {
-        const newProject = projectFactory(title, projectID);
+    const createExampleProject = (title, taskCount, color) => {
+        const newProject = projectFactory(title, projectID, color);
         projectID++;
         for (let i = 0; i < taskCount; i++) {
             const taskTitle = `Example task title ${i}`;
@@ -30,10 +30,10 @@ const testObjects = (() => {
         return newProject;
     };
 
-    const project1 = createExampleProject("Primer jedan", 6);
+    const project1 = createExampleProject("Primer jedan", 6, "#c41400");
     project1.setDescription("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas fugit obcaecati, ipsa, dolorum maxime exercitationem consequuntur libero possimus iure, nemo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas fugit obcaecati, ipsa, dolorum maxime exercitationem consequuntur libero possimus iure, nemo.");
-    const project2 = createExampleProject("Example two", 2);
-    const project3 = createExampleProject("Primer tri", 1);
+    const project2 = createExampleProject("Example two", 2, "#ffcc00");
+    const project3 = createExampleProject("Primer tri", 1, "#02ad49");
     const project4 = createExampleProject("Example four", 0);
 
     return {

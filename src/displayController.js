@@ -35,7 +35,8 @@ const displayControllerModule = (() => {
             projectParent.dataset.id = project.getID();
 
             const projectColor = document.createElement("div");
-            projectColor.classList.add("projectColor", "red");
+            projectColor.classList.add("projectColor");
+            projectColor.style.backgroundColor = project.getColor();
             projectParent.append(projectColor, `${project.getTitle()}`);
 
             _projectList.append(projectParent);

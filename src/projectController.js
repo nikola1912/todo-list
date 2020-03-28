@@ -19,7 +19,8 @@ const projectController = (() => {
     const _createNewProject = () => {
         const newProjectTitle       = _newProjectForm.elements["title"].value;
         const newProjectDescription = _newProjectForm.elements["description"].value;
-        const newProject = projectFactory(newProjectTitle, projectID);
+        const newProjectColor       = _newProjectForm.elements["color"].value;
+        const newProject = projectFactory(newProjectTitle, projectID, newProjectColor);
 
         projectID++;
         newProject.setDescription(newProjectDescription);
