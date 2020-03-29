@@ -29,6 +29,7 @@ body {
 }
 
 #navBarInner {
+    margin: 0;
     height: 100%;
     display: flex;
     align-items: center;
@@ -83,8 +84,30 @@ body {
     float: left;
 }
 
+#settingsButtonWrapper {
+    border-radius: 100%;
+}
+
+#settingsButtonWrapper:hover {
+    background-color: var(--theme-color-hover);
+}
+
+#settingsButton {
+    background-color: var(--theme-color);
+    cursor: pointer;
+    height: 44px;
+    width: 44px;
+    border: none;
+    padding: 0;
+    outline: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #settingsMenu {
-    display: block;
+    display: none;
     position: absolute;
     min-width: 150px;
     background-color: white;
@@ -95,16 +118,8 @@ body {
     margin-top: 2px;
 }
 
-#settingsButton span {
-    cursor: pointer;
-    height: 44px;
-    width: 44px;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
+/* ///////////////////////////////////////////////////////////////// */
 #settingsCheckbox:hover + span {
     background-color: var(--theme-color-hover);
 }
@@ -121,6 +136,7 @@ body {
 #settingsCheckbox:checked ~ #settingsMenu {
     display: block;
 }
+/* ///////////////////////////////////////////////////////////////// */
 
 .settingsOption:first-child {
     padding-top: 8px;
