@@ -37,12 +37,17 @@ body {
 }
 
 .navBarItem {
-    display: flex;
-    align-items: center;
+    display: inline-block;
 }
 
 #appTitle {
     cursor: default;
+}
+
+#searchBarWrapper {
+    margin: 54px;
+    display: flex;
+    align-items: center;
 }
 
 #searchButton {
@@ -57,10 +62,6 @@ body {
 
 #searchButton:hover {
     background-color: var(--theme-color-hover);
-}
-
-#searchBarWrapper {
-    margin: 54px;
 }
 
 #searchBar {
@@ -80,8 +81,7 @@ body {
 }
 
 #settingsMenuWrapper {
-    display: block;
-    float: left;
+    position: relative;
 }
 
 #settingsButtonWrapper {
@@ -100,7 +100,6 @@ body {
     border: none;
     padding: 0;
     outline: 0;
-    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,34 +108,15 @@ body {
 #settingsMenu {
     display: none;
     position: absolute;
+    top: 90%;
+    left: 0;
     min-width: 150px;
-    background-color: white;
     font-size: 0.74em;
     border-radius: 0 0 3px 3px;
     border: 1px solid #ddd;
     border-top: 0;
-    margin-top: 2px;
+    background-color: white;
 }
-
-
-/* ///////////////////////////////////////////////////////////////// */
-#settingsCheckbox:hover + span {
-    background-color: var(--theme-color-hover);
-}
-
-#settingsCheckbox {
-    cursor: pointer;
-    position: absolute;
-    margin: 0;
-    opacity: 0;
-    height: 44px;
-    width: 44px;
-}
-
-#settingsCheckbox:checked ~ #settingsMenu {
-    display: block;
-}
-/* ///////////////////////////////////////////////////////////////// */
 
 .settingsOption:first-child {
     padding-top: 8px;
@@ -147,16 +127,16 @@ body {
 }
 
 .settingsOption {
-    border: none;
+    outline: 0;
     width: 100%;
-    background-color: white;
+    font-size: 0.9em;
     padding: 5px 10px;
+    cursor: pointer;
+    font: inherit;
+    border: none;
+    background-color: white;
     display: flex;
     align-items: center;
-    cursor: pointer;
-    outline: 0;
-    font: inherit;
-    font-size: 0.9em;
 }
 
 .settingsOption:disabled {
