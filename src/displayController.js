@@ -8,6 +8,8 @@ const displayControllerModule = (() => {
     const _newProjectForm   = document.getElementById("projectForm");
     const _submitFormButton = document.getElementById("projectFormSubmitButton");
     const _cancelFormButton = document.getElementById("projectFormCancelButton");
+
+    const _settingsMenu = document.getElementById("settingsMenu");
     
     const expandProjects = () => {
         const projectList = document.getElementById("projectList");
@@ -108,6 +110,27 @@ const displayControllerModule = (() => {
         });
     };
 
+    const _closeMenu = (event) => {
+        if ((event.target.id !==  "settingsMenu") &&
+            (event.target.id !==  "settingsButton")) 
+                _settingsMenu.style.display = "none";
+        document.removeEventListener("click", _closeMenu);
+    }
+
+    const showMenu = () => {
+        let menuDisplay = _settingsMenu.style.display;
+        _settingsMenu.style.display = (menuDisplay === "") || (menuDisplay === "none") ? "block" : "none";
+        if (_settingsMenu.style.display === "block") {
+            document.addEventListener("click", _closeMenu, true);
+        } else {
+            document.removeEventListener("click", _closeMenu);
+        }
+    };
+
+    const applyEventListeners = () => {
+        document.getElementById("settingsButton").addEventListener("click", showMenu);
+    };
+
     return {
         expandProjects,
         displayNewProjectForm,
@@ -117,7 +140,8 @@ const displayControllerModule = (() => {
         expandTask,
         displayNewTaskForm,
         closeNewTaskForm,
-        renderTasks
+        renderTasks,
+        applyEventListeners
     };
 })();
 

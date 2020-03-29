@@ -172,6 +172,10 @@ body {
     background-color: var(--theme-color-hover);
 }
 
+.settingsOption * {
+    pointer-events: none;
+}
+
 .settingsIcon {
     opacity: 0.7;
     display: flex;
