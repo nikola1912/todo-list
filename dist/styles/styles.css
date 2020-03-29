@@ -4,6 +4,7 @@
     --theme-color-active: rgb(181, 255, 224);
     --theme-color-focus: rgba(255, 255, 255, 0.493);
     --searchBar-color: rgb(106, 255, 193);
+    --navBar-border: rgb(2, 255, 150);
 }
 
 html {
@@ -22,9 +23,9 @@ body {
     font-size: 1.3em;
     height: 44px;
     width: 100%;
-    box-shadow: 0px -1px 12px 0px rgba(0,0,0,0.75);
     position: relative;
-    z-index: 1;
+    border-bottom: solid 1px var(--navBar-border);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }
 
 #navBarInner {
@@ -86,12 +87,12 @@ body {
     display: none;
     position: absolute;
     min-width: 150px;
-    z-index: 1;
     background-color: white;
     font-size: 0.74em;
     border-radius: 0 0 3px 3px;
     border: 1px solid #ddd;
     border-top: 0;
+    margin-top: 2px;
 }
 
 #settingsButton span {
